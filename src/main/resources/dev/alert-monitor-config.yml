@@ -1,0 +1,31 @@
+alert:
+  alertConfigList:
+    - client: "microservice_1"
+      eventType: "PAYMENT_EXCEPTION"
+      alertConfig:
+        type: "TUMBLING_WINDOW"
+        count: 10
+        windowSizeInSecs: 10
+      dispatchStrategyList:
+        - type: "CONSOLE"
+          message: "issue in payment"
+        - type: "EMAIL"
+          subject: "payment exception threshold breached"
+    - client: "user_1"
+      eventType: "USERSERVICE_EXCEPTION1"
+      alertConfig:
+        type: "SLIDING_WINDOW"
+        count: 10
+        windowSizeInSecs: 10
+      dispatchStrategyList:
+        - type: "CONSOLE"
+          message: "issue in user service"
+    - client: "user_2"
+      eventType: "USERSERVICE_EXCEPTION2"
+      alertConfig:
+        type: "SIMPLE_COUNT"
+        count: 10
+        windowSizeInSecs: 10
+      dispatchStrategyList:
+        - type: "CONSOLE"
+          message: "issue in user service"

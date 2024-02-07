@@ -1,0 +1,10 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /alertmonitor
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      path-mapping:
+        health: /health

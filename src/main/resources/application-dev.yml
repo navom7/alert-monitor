@@ -1,0 +1,10 @@
+spring:
+  config:
+    import:
+      - classpath:dev/kafka.yml
+      - classpath:dev/health-check.yml
+      - classpath:dev/alert-monitor-config.yml
+  redis:
+    host: ${REDIS_HOST}
+    port: 6379
+    password: ${REDIS_PASSWORD}

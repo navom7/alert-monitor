@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRATP_SERVERS}
+
+    dlq-topic:  ${KAFKA_DLQ_TOPIC}
+    client-event-partitioned-topic:  ${KAFKA_CLIENT_EVENT_PARTITIONED_TOPIC}
+    client-event-partitioned-group-id:  ${KAFKA_CLIENT_EVENT_PARTITIONED_GROUP_ID}
+    client-event-dlq-group-id:  ${KAFKA_CLIENT_EVENT_DLQ_GROUP_ID}
+    no-of-partitions: 10
+    retry:
+      backoff:
+        interval: 500
+        max-attempts: 3
